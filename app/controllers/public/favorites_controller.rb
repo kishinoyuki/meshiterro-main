@@ -1,5 +1,4 @@
 class Public::FavoritesController < ApplicationController
- before_action :authenticate_user!, except: [:top]
 
   def create
     post_image = PostImage.find(params[:post_image_id])

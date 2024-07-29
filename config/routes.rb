@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     get 'dashboards', to: 'dashboards#index'
     resources :users, only: [:destroy]
   end
-  devise_for :users
+  
+  scope module: :public do
+   devise_for :users
+  end
   root to: 'homes#top'
   get 'homes/about', to: 'homes#about', as: :about
   resources :post_images, only: [:new, :create, :index, :show, :destroy] do

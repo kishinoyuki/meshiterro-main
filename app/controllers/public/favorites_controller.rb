@@ -1,4 +1,4 @@
-class FavoritesController < ApplicationController
+class Public::FavoritesController < ApplicationController
  before_action :authenticate_user!, except: [:top]
 
   def create
